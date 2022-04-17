@@ -37,7 +37,7 @@ public class CuentaController {
 	}
 	
 	@PostMapping("/cuentas")
-	public ResponseEntity<?> guardarEmpleado(@Valid @RequestBody Cuenta cuentas, BindingResult result){
+	public ResponseEntity<?> guardarCuenta(@Valid @RequestBody Cuenta cuentas, BindingResult result){
 		Cuenta cuentasObj = null;
 		Map<String, Object> response = new HashMap<>();
 		
@@ -62,7 +62,7 @@ public class CuentaController {
 	}
 	
 	@PutMapping("/cuentas/{id}")
-	public ResponseEntity<?> actualizarEmpleado(@Valid @RequestBody Cuenta cuenta, BindingResult result, @PathVariable Long id){
+	public ResponseEntity<?> actualizarCuenta(@Valid @RequestBody Cuenta cuenta, BindingResult result, @PathVariable Long id){
 		Cuenta cuentaFinal = null;
 		Map<String, Object> response = new HashMap<>();
 		Cuenta cuentaObj = service.findById(id);

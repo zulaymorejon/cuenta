@@ -35,7 +35,7 @@ class CuentaApirestApplicationTests {
 	@Mock
 	private ICuentaRepository respository;
 	
-	/*@Test
+	@Test
 	void findAllTotalRegistrosTest() {
 		when(respository.findAll()).thenReturn(DatosPrueba.cuentas);
 		
@@ -53,22 +53,24 @@ class CuentaApirestApplicationTests {
 		assertEquals(0, cuentaVacio.size());
 		assertFalse(cuentaVacio==null);
 		verify(respository,times(1)).findAll();
-	}*/
+	}
 	
 	@Test
 	void saveTest() {		
-		when(respository.save(any(Cuenta.class))).thenReturn(DatosPrueba.cuentaResponse);
-		Cuenta cuenta = service.save(DatosPrueba.empleadoRequest());
-		assertEquals("Zulay", cuenta.getCliente());
-		assertEquals("123456", cuenta.getNumeroCuenta());
-		verify(respository,times(1)).save(any(Cuenta.class));
+		
+		  when(respository.save(any(Cuenta.class))).thenReturn(DatosPrueba.
+		  cuentaResponse); Cuenta cuenta = service.save(DatosPrueba.empleadoRequest());
+		  assertEquals("Zulay", cuenta.getCliente()); assertEquals("123456",
+		  cuenta.getNumeroCuenta());
+		  verify(respository,times(1)).save(any(Cuenta.class));
+		 
 	}
 	
-	/*@Test
+	@Test
 	void deleteTest() {		
 		respository.findById(anyLong());
 		service.deleteById(1L);
 
 		verify(respository,times(1)).deleteById(anyLong());
-	}*/
+	}
 }

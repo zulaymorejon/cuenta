@@ -33,7 +33,6 @@ public class Cuenta implements Serializable {
 	@Column(unique=true, name="numcuenta")
 	private String numeroCuenta;
 	
-	@Pattern(regexp = "[0-9]+",message = "Solo permite valores numericos")
 	@NotEmpty(message = "El campo no puede ser vacio")
 	@Column(name = "cliente")
 	private String cliente;
@@ -43,7 +42,7 @@ public class Cuenta implements Serializable {
 	private String tipoCuenta;
 	
 	@Column(name = "saldoinicial")
-	private float saldoInicial;
+	private Double saldoInicial;
 	
 	@Column(name = "estado")
 	private String estado;

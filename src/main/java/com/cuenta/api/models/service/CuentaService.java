@@ -7,11 +7,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cuenta.api.models.entity.Cuenta;
+import com.cuenta.api.models.repository.ICuentaRepository;
 
 @Service
 public class CuentaService implements ICuentaService{
 	@Autowired
-	private ICuentaService repository;
+	private ICuentaRepository repository;
 	
 	@Override
 	@Transactional(readOnly = true)
@@ -22,7 +23,7 @@ public class CuentaService implements ICuentaService{
 	@Override
 	@Transactional(readOnly = true)
 	public Cuenta findById(Long id) {
-		return repository.findById(id);
+		return repository.findById(id).orElse(null);
 	}
 
 	@Override
